@@ -14,8 +14,9 @@
   {
     "name": "Inforádió",
     "url": "http://inforadio.hu/",
+    "shoutcastify": true,
     "locator": "http://inforadio.hu/lejatszo->pls",
-    "src": "http://87.229.45.44:8400/;stream.nsv"
+    "src": "http://87.229.45.44:8400/;"
   },
   {
     "name": "Sláger FM",
@@ -44,7 +45,7 @@
   {
     "name": "Retro Rádió",
     "url": "http://www.retroradio.hu/",
-    "locator": "http://www.retroradio.hu/player.php->listen",
+    "locator": "http://retroradio.hu/player.php->listen",
     "src": "http://stream.retrofm.hu:8000/listen"
   },
   {
