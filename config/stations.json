@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Class FM",
+    "url": "http://classfm.hu/",
+    "locator": "mp3",
+    "src": "http://icast.connectmedia.hu/4784/live.mp3"
+  },
+  {
+    "name": "Klubrádió",
+    "url": "http://www.klubradio.hu/",
+    "locator": "bpstream",
+    "src": "http://stream.klubradio.hu:8080/bpstream"
+  },
+  {
+    "name": "Inforádió",
+    "url": "http://inforadio.hu/",
+    "locator": "http://inforadio.hu/lejatszo->pls",
+    "src": "http://87.229.45.44:8400/;stream.nsv"
+  },
+  {
+    "name": "Sláger FM",
+    "url": "http://www.slagerfm.hu/",
+    "locator": "mp3",
+    "src": "http://92.61.114.159:7812/slagerfm256.mp3"
+  },
+  {
+    "name": "Klasszik Rádió",
+    "url": "http://www.klasszikradio.hu/",
+    "locator": "http://www.klasszikradio.hu/segitseg-a-zenehallgatashoz.html->klasszik.mp3.m3u",
+    "src": "http://online.klasszikradio.hu/klasszik.mp3"
+  },
+  {
+    "name": "Amadeus Rádió",
+    "url": "http://www.amadeusradio.hu/",
+    "locator": "http://www.amadeusradio.hu/amadeus_player_window.php->stream192",
+    "src": "http://87.229.73.156:8004/stream192"
+  },
+  {
+    "name": "Music FM",
+    "url": "http://www.musicfm.hu/",
+    "locator": "http://www.musicfm.hu/player/audio->mp3",
+    "src": "http://stream.musicfm.hu:8000/musicfm.mp3"
+  },
+  {
+    "name": "Retro Rádió",
+    "url": "http://www.retroradio.hu/",
+    "locator": "http://www.retroradio.hu/player.php->listen",
+    "src": "http://stream.retrofm.hu:8000/listen"
+  },
+  {
+    "name": "Petőfi Rádió",
+    "url": "http://www.mediaklikk.hu/petofi",
+    "locator": "http://www.mediaklikk.hu/petofi-radio-elo->mp3",
+    "src": "http://mr-stream.mediaconnect.hu/4738/mr2.mp3"
+  },
+  {
+    "name": "Jazzy",
+    "url": "http://www.jazzy.hu/",
+    "locator": "http://www.jazzy.hu/909.php->stream/1/",
+    "src": "http://online.jazzy.hu:80/stream/1/"
+  },
+  {
+    "name": "Bartók Rádió",
+    "url": "http://www.mediaklikk.hu/bartok/",
+    "locator": "http://www.mediaklikk.hu/bartok-radio-elo->mp3",
+    "src": "http://mr-stream.mediaconnect.hu/4741/mr3.mp3"
+  },
+  {
+    "name": "Rádió Rock",
+    "url": "http://www.radiorock958.hu/",
+    "locator": "http://www.radiorock958.hu/radio.php->/;",
+    "src": "http://92.61.114.195:13150/;"
+  },
+  {
+    "name": "Lánchíd Rádió",
+    "url": "http://lanchidradio.hu/",
+    "locator": "m3u",
+    "shoutcastify": true,
+    "src": "http://91.82.85.44:9004/;"
+  },
+  {
+    "name": "Lakihegy Rádió",
+    "url": "http://lanchidradio.hu/",
+    "locator": "http://lakihegyradio.hu/player/player.php->/;",
+    "src": "http://stream.composeit.hu:8300/;"
+  }
+]
