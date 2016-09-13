@@ -11,5 +11,5 @@ const devServer = new WebpackDevServer(webpack(config), {
   hot: true
 })
 
-console.log(`Webpack dev server listening on ${devPort}`)
+console.log(`dev server listening on ${devPort}`)
 devServer.listen(devPort, 'localhost')

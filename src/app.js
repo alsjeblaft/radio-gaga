@@ -3,6 +3,7 @@ import './styles/index.less'
 var app = {
   // Application Constructor
   initialize: function () {
+    console.log('App init.')
     this.bindEvents()
   },
   // Bind Event Listeners
