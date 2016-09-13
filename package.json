@@ -4,8 +4,11 @@
   "description": "Web radio stream player.",
   "main": "index.js",
   "scripts": {
-    "test-stations": "node scripts/test-stations",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "dev": "node webpack/dev-client",
+    "build": "rimraf www && webpack --config webpack/webpack.config.js --progress --minimize",
+    "lint": "eslint src",
+    "test-stations": "node scripts/test-stations"
   },
   "repository": {
     "type": "git",
@@ -18,11 +21,32 @@
   },
   "homepage": "https://github.com/szkrd/radio-gaga#readme",
   "devDependencies": {
+    "babel-core": "6.14.0",
+    "babel-loader": "6.2.5",
+    "babel-polyfill": "6.13.0",
+    "babel-preset-es2015": "6.14.0",
+    "css-loader": "0.25.0",
+    "dotenv": "2.0.0",
     "eslint": "3.5.0",
     "eslint-config-standard": "6.0.0",
     "eslint-plugin-promise": "2.0.1",
     "eslint-plugin-standard": "2.0.0",
+    "file-loader": "0.9.0",
+    "html-loader": "0.4.4",
+    "html-webpack-plugin": "2.22.0",
+    "less": "2.7.1",
+    "less-loader": "2.2.3",
     "node-fetch": "1.6.0",
-    "shelljs": "0.7.4"
+    "postcss-loader": "0.13.0",
+    "rimraf": "2.5.4",
+    "shelljs": "0.7.4",
+    "style-loader": "0.13.1",
+    "vue": "2.0.0-rc.6",
+    "webpack": "1.13.2",
+    "webpack-dev-server": "1.15.1"
+  },
+  "dependencies": {
+    "koa": "1.2.4",
+    "koa-static": "2.0.0"
   }
 }
