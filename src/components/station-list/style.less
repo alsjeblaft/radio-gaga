@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+
+.station-list-component {
+
+  .station-item {
+    border: 5px solid rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    padding: 6px;
+    margin: 0 6px;
+    font-size: 30px;
+
+    &.playing {
+      border-color: @color-5;
+      box-shadow: 0 0 15px @color-5 inset;
+      color: @color-7;
+    }
+  }
+}

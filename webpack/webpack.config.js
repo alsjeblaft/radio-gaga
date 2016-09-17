@@ -5,6 +5,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const EncodingPlugin = require('webpack-encoding-plugin')
 const minimize = process.argv.indexOf('--minimize') > -1
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -24,10 +25,13 @@ const plugins = [
     template: 'src/index.ejs'
   }),
   new webpack.DefinePlugin({
-    STATIONS: cat(path.resolve(__dirname, '../config/stations.json'))
+    STATIONS: cat(path.resolve(__dirname, '../config/stations.json')) + ''
   }),
   new ExtractTextPlugin('styles.css', {
     allChunks: true
+  }),
+  new EncodingPlugin({
+    encoding: 'utf-8' // /webpack/webpack-dev-server/issues/432
   }),
   new webpack.HotModuleReplacementPlugin()
 ]
@@ -73,11 +77,13 @@ const loaders = [
 //
 const entry = {
   app: [
-    './src/app.js'
+    './src/main.js'
   ],
   vendor: [
     'babel-polyfill',
-    'vue'
+    'object-get',
+    'vue',
+    'vuex'
   ]
 }
 
@@ -87,7 +93,7 @@ const entry = {
 const output = {
   path: path.resolve(__dirname, '../www'), // cordova root
   publicPath: './',
-  filename: 'app.js'
+  filename: 'main.js'
 }
 
 // ----
@@ -96,5 +102,10 @@ module.exports = {
   output,
   plugins,
   devtool: isDev ? 'source-map' : null,
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  },
   module: { loaders }
 }

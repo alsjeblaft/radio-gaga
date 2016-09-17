@@ -1,0 +1,7 @@
+<div>
+  <button @click="showSettings = !showSettings">Settings</button>
+  <settings v-if="showSettings"></settings>
+  <station-list></station-list>
+  <player></player>
+  <error-message></error-message>
+</div>

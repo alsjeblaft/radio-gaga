@@ -1,0 +1,7 @@
+<div class="station-list-component">
+  <ul>
+    <li v-for="station in stations" @click="onStationClick(station)" class="station-item" :class="{playing: station.playing}">
+      {{station.name}}
+    </li>
+  </ul>
+</div>
