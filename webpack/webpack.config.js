@@ -1,6 +1,6 @@
 /* global cat */
 require('shelljs/global')
-// const config = require('../config/client')
+const config = require('../config/client')
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -25,7 +25,8 @@ const plugins = [
     template: 'src/index.ejs'
   }),
   new webpack.DefinePlugin({
-    STATIONS: cat(path.resolve(__dirname, '../config/stations.json')) + ''
+    STATIONS: cat(path.resolve(__dirname, '../config/stations.json')) + '',
+    DEFAULT_STATION_DATA_URL: JSON.stringify(config.defaultStationDataUrl)
   }),
   new ExtractTextPlugin('styles.css', {
     allChunks: true
@@ -81,6 +82,7 @@ const entry = {
   ],
   vendor: [
     'babel-polyfill',
+    'whatwg-fetch',
     'object-get',
     'vue',
     'vuex'

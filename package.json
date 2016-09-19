@@ -56,6 +56,7 @@
     "vuex": "1.0.0-rc.2",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.15.1",
-    "webpack-encoding-plugin": "0.2.0"
+    "webpack-encoding-plugin": "0.2.0",
+    "whatwg-fetch": "1.0.0"
   }
 }

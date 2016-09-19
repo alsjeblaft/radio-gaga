@@ -18,12 +18,15 @@ export default Vue.component('ErrorMessage', {
       if (!this.error) {
         return
       }
+      let key = 'unknownError'
       let code = this.error.code
       if (this.error.source === 'player') {
         code = code > 0 && code < 5 ? code : 0
-        return Vue.t(`mediaError${code}`)
+        key = `mediaError${code}`
+      } else if (this.error.source === 'player') {
+        key = 'fetchError'
       }
-      return Vue.t(`unknownError`)
+      return Vue.t(key)
     }
   },
   methods: {

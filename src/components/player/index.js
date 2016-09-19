@@ -19,7 +19,7 @@ export default Vue.component('Player', {
   }),
   computed: {
     src () {
-      return this.currentStation ? 'http://localhost:3000/a.mp3' : '' // TODO error handling
+      // return this.currentStation ? 'http://localhost:3000/a.mp3' : '' // to test the error handler
       return (this.currentStation || {}).src
     }
   },
