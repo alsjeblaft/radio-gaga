@@ -1,5 +1,3 @@
 <div class="error-message-component" v-if="message">
-  <p @click="close">
-    Error: {{message}}
-  </p>
+  <p @click="close">{{ $t('errorHandlerPrefix') }} {{message}}</p>
 </div>

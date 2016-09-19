@@ -18,7 +18,12 @@ export default Vue.component('ErrorMessage', {
       if (!this.error) {
         return
       }
-      return 'TODO an error occured' + JSON.stringify(this.error)
+      let code = this.error.code
+      if (this.error.source === 'player') {
+        code = code > 0 && code < 5 ? code : 0
+        return Vue.t(`mediaError${code}`)
+      }
+      return Vue.t(`unknownError`)
     }
   },
   methods: {

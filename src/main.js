@@ -1,10 +1,17 @@
 import './styles/index.less'
 import Vue from 'vue'
+import VueI18n from 'vue-i18n'
 import App from './components/app'
 import store from './vuex/store'
+import locales from './locales'
 
-// TODO vue i18n <- window.navigator.userLanguage || window.navigator.language (hu-HU)
+// localization
+Vue.use(VueI18n)
+Object.keys(locales).forEach(lang => Vue.locale(lang, locales[lang]))
+const lang = window.navigator.language
+Vue.config.lang = locales[lang] ? lang : 'en-US'
 
+// bootstrap
 function init () {
   return new Vue({
     el: '#main',

@@ -1,5 +1,5 @@
 <div>
-  <button @click="showSettings = !showSettings">Settings</button>
+  <button @click="showSettings = !showSettings">{{ $t("settings") }}</button>
   <settings v-if="showSettings"></settings>
   <station-list></station-list>
   <player></player>
