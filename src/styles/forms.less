@@ -1,13 +1,13 @@
 button {
   background: @color-4;
-  background-image: -webkit-linear-gradient(top, @color-4, @color-5);
-  background-image: linear-gradient(to bottom, @color-4, @color-5);
+  background-image: -webkit-linear-gradient(top, darken(@color-4, 30%), darken(@color-5, 30%));
+  background-image: linear-gradient(to bottom, darken(@color-4, 30%), darken(@color-5, 30%));
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 5px;
   text-shadow: 0 0 5px @color-2;
   color: @color-7;
-  font-size: 20px;
+  font-size: 22px;
   padding: 10px 20px 10px 20px;
   border: solid @color-1 1px;
   text-decoration: none;
@@ -19,6 +19,7 @@ label {
   display: block;
   color: @color-4;
   font-weight: bold;
+  font-size: 22px;
 }
 
 input[type=text], input[type=url] {
