@@ -16,3 +16,4 @@ www
 
 # app
 .env
+dist
