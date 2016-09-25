@@ -68,8 +68,12 @@ const loaders = [
     loader: lessLoader
   },
   {
-    test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-    loader: 'file-loader'
+    test: /\.svg/,
+    loader: 'svg-url-loader'
+  },
+  {
+    test: /\.svg\?fill=/,
+    loader: 'svg-fill?selector=path'
   }
 ]
 

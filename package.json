@@ -55,6 +55,8 @@
     "shelljs": "0.7.4",
     "shx": "0.1.4",
     "style-loader": "0.13.1",
+    "svg-fill-loader": "0.0.3",
+    "svg-url-loader": "1.1.0",
     "vue": "2.0.0-rc.6",
     "vue-i18n": "4.5.0",
     "vuex": "1.0.0-rc.2",

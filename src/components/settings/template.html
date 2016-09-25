@@ -1,24 +1,33 @@
-<div>
-  <p v-if="downloadingStations">DOWNLOADING</p>
-  <p>
-    <label>
-      {{ $t('stationList') }}
-    </label>
-    <span v-if="usingBuiltinStations">{{ $t('builtin') }}</span>
-    <span v-else>{{ $t('downloaded') }}</span>
-  </p>
-  <p>
-    <label>
-      {{ $t('stationDataUrl') }}
-    </label>
-    <input type="url" :value="stationsDataUrl" @input="updateStationsDataUrl">
-    <button @click="downloadStations">
-      {{ $t('downloadStationList') }}
-    </button>
-  </p>
-  <p v-if="!usingBuiltinStations">
-    <button @click="resetStations">
-      {{ $t('removeDownloadedStations') }}
-    </button>
-  </p>
+<div class="settings-component" :class="{opened: showSettings}">
+  <b class="icon icon-cog content-toggle" @click="showSettings = !showSettings"></b>
+  <div class="content" v-show="showSettings">
+    <div v-if="downloadingStations" class="downloading">
+      <span class="text">
+        {{ $t('downloading') }}
+      </span>
+      <b class="icon icon-loading"></b>
+    </div>
+    <p>
+      <label>
+        {{ $t('stationList') }}
+      </label>
+      <span v-if="usingBuiltinStations">{{ $t('builtin') }}</span>
+      <span v-else>{{ $t('downloaded') }}</span>
+    </p>
+    <p>
+      <label>
+        {{ $t('stationDataUrl') }}
+      </label>
+      <input type="url" :value="stationsDataUrl" @input="updateStationsDataUrl">
+      <button @click="downloadStations">
+        {{ $t('downloadStationList') }}
+      </button>
+    </p>
+    <p v-if="!usingBuiltinStations">
+      <button @click="resetStations">
+        {{ $t('removeDownloadedStations') }}
+      </button>
+    </p>
+  </div>
+  <div class="cover" v-show="downloadingStations"></div>
 </div>

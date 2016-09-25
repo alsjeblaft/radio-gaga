@@ -3,6 +3,7 @@ export default {
   settings: 'Settings',
   builtin: 'builtin',
   downloaded: 'downloaded',
+  downloading: 'downloading',
   stationList: 'Station list:',
   stationDataUrl: 'Station data url:',
   downloadStationList: 'Download station list',
