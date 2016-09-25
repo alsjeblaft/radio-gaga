@@ -15,5 +15,6 @@ plugins
 www
 
 # app
+release-key.keystore
 .env
 dist

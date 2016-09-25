@@ -14,10 +14,11 @@
     "preview:android": "cordova run android",
     "preview:ios": "cordova run ios",
     "preview:browser": "npm run build && npm start -- --open",
-    "release:android": "rimraf dist && shx mkdir dist && shx cp ./platforms/android/build/outputs/apk/android-release-unsigned.apk ./dist/radio-gaga-unsigned.apk",
     "test-stations": "node scripts/test-stations",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "changelog:dry-run": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog:dry-run": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "sign:android": "shx cp dist/radio-gaga-unsigned.apk dist/radio-gaga-signed.apk && jarsigner -verbose -certs -tsa http://timestamp.comodoca.com/rfc3161 -sigalg SHA1withRSA -digestalg SHA1 -keystore config/release-key.keystore dist/radio-gaga-signed.apk alias_name && jarsigner -verify dist/radio-gaga-signed.apk",
+    "release:android": "rimraf dist && shx mkdir dist && shx cp ./platforms/android/build/outputs/apk/android-release-unsigned.apk ./dist/radio-gaga-unsigned.apk && npm run sign:android"
   },
   "repository": {
     "type": "git",

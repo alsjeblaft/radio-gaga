@@ -2,10 +2,41 @@
 
 Simple web radio player for my elderly mother, no ads, no popups, no settings.
 
-## stations.json
+My primary target is a rooted Nexus 7 (android), if you need support for other devices, feel free to PR.
 
-Station list is stored in a json config file, right now the application itself
-does not fetch/parse remote sites.
+The APK has not been uploaded to the play store, I use "unknown sources" and manual installs,
+the device has no gapps installed as a matter of fact.
+
+## installation
+
+1. `npm i`
+2. `sudo npm install -g cordova`
+3. `cordova requirements`
+4. follow cordova instructions! (install java jdk, android sdk, gradle, etc.)
+
+## development
+
+* `npm run dev` starts a webpack server
+* `npm run preview:browser` builds a js pack, starts koa static, opens browser
+* check _.env.sample_ for env vars
+
+## release
+
+Symlink or copy your _release-key.keystore_ into the _config_ folder. Create a key
+with `keytool -genkey -v -keystore ./config/release-key.keystore -alias alias_name -keyalg RSA -validity 10000`
+if you don't have one so far.
+
+Run `npm run release:android`, if you have the keystore file in place, jdk properly installed -
+this should create a signed and an unsigned binary in the dist folder.
+
+So far the release drafting has to be done manually on github. Do not forget to upload the
+signed apk as a binary release.
+
+## stations
+
+Station list is stored in a json config file (_station.json_), right now the application itself
+does not fetch/parse remote sites (the list is compiled into the app itself; downloading
+a station list json from arbitrary url is possible).
 
 Object format:
 
