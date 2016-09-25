@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development node webpack/dev-client",
     "build": "npm run build:frontend",
     "build:frontend": "rimraf www && webpack --config webpack/webpack.config.js --progress --minimize",
-    "build:android": "npm run build:frontend && cordova build android && npm run release:android",
+    "build:android": "npm run build:frontend && cordova build --release android",
     "lint": "eslint src",
     "preview": "npm run preview:android",
     "preview:android": "cordova run android",

@@ -2,7 +2,7 @@
 
 Simple web radio player for my elderly mother, no ads, no popups, no settings.
 
-My primary target is a rooted Nexus 7 (android), if you need support for other devices, feel free to PR.
+My primary target is a rooted Nexus 7 (android 5.1.1, XenonHD), if you need support for other devices, feel free to PR.
 
 The APK has not been uploaded to the play store, I use "unknown sources" and manual installs,
 the device has no gapps installed as a matter of fact.
@@ -20,17 +20,21 @@ the device has no gapps installed as a matter of fact.
 * `npm run preview:browser` builds a js pack, starts koa static, opens browser
 * check _.env.sample_ for env vars
 
+For android enable "usb debugging" and "unknown sources".
+Run `npm run preview:android` to upload the app directly to the device.
+
+If you want to upload the apk manually, then disable the "usb debugging" mode.
+
 ## release
 
-Symlink or copy your _release-key.keystore_ into the _config_ folder. Create a key
-with `keytool -genkey -v -keystore ./config/release-key.keystore -alias alias_name -keyalg RSA -validity 10000`
-if you don't have one so far.
-
-Run `npm run release:android`, if you have the keystore file in place, jdk properly installed -
-this should create a signed and an unsigned binary in the dist folder.
-
-So far the release drafting has to be done manually on github. Do not forget to upload the
-signed apk as a binary release.
+1. First build the apk: `npm run build:android`, this will create an unsigned apk in dist.
+2. Symlink or copy your _release-key.keystore_ into the _config_ folder. Create a key
+   with `keytool -genkey -v -keystore ./config/release-key.keystore -alias alias_name -keyalg RSA -validity 10000`
+   if you don't have one so far.
+3. Run `npm run release:android`, if you have the keystore file in place, jdk properly installed -
+   this should create a signed binary in the dist folder.
+4. So far the release drafting has to be done manually on github. Do not forget to upload the
+   signed apk as a binary release.
 
 ## stations
 
