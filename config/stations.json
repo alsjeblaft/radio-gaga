@@ -57,8 +57,9 @@
   {
     "name": "Jazzy",
     "url": "http://www.jazzy.hu/",
-    "locator": "http://www.jazzy.hu/909.php->stream/1/",
-    "src": "http://online.jazzy.hu:80/stream/1/"
+    "locator": "http://www.jazzy.hu/909.php->/jazzy.mp3",
+    "src": "http://94.199.183.186/jazzy.mp3",
+    "timestamp": 1474826588597
   },
   {
     "name": "Bartók Rádió",

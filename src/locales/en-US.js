@@ -1,4 +1,6 @@
 export default {
+  // station list
+  brokenStation: 'broken',
   // settings
   settings: 'Settings',
   builtin: 'builtin',

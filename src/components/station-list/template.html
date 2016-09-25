@@ -1,7 +1,10 @@
 <div class="station-list-component">
   <ul>
-    <li v-for="station in stations" @click="onStationClick(station)" class="station-item" :class="{playing: station.playing}">
+    <li v-for="station in stations" @click="onStationClick(station)" class="station-item" :class="{playing: station.playing, broken: !station.src}">
       {{station.name}}
+      <span class="notice" v-if="!station.src">
+        ({{ $t('brokenStation') }})
+      </span>
     </li>
   </ul>
 </div>

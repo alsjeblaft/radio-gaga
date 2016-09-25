@@ -9,8 +9,11 @@ import locales from './locales'
 // localization
 Vue.use(VueI18n)
 Object.keys(locales).forEach(lang => Vue.locale(lang, locales[lang]))
-const lang = 'hu-HU' // window.navigator.language
-Vue.config.lang = 'hu-HU' // locales[lang] ? lang : 'en-US'
+const lang = window.navigator.language
+Vue.config.lang = locales[lang] ? lang : 'en-US'
+
+// test
+Vue.config.lang = 'hu-HU'
 
 // bootstrap
 function init () {

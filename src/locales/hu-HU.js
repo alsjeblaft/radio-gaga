@@ -1,4 +1,6 @@
 export default {
+  // station list
+  brokenStation: 'nem működik',
   // settings
   settings: 'Beállítások',
   builtin: 'alkalmazásban',
