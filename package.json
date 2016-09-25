@@ -6,12 +6,15 @@
   "scripts": {
     "start": "node .",
     "dev": "cross-env NODE_ENV=development node webpack/dev-client",
-    "build": "rimraf www && webpack --config webpack/webpack.config.js --progress --minimize",
+    "build": "npm run build:frontend",
+    "build:frontend": "rimraf www && webpack --config webpack/webpack.config.js --progress --minimize",
+    "build:android": "npm run build:frontend && cordova build android && npm run release:android",
     "lint": "eslint src",
-    "preview": "cordova run android",
+    "preview": "npm run preview:android",
     "preview:android": "cordova run android",
     "preview:ios": "cordova run ios",
     "preview:browser": "npm run build && npm start -- --open",
+    "release:android": "rimraf dist && shx mkdir dist && shx cp ./platforms/android/build/outputs/apk/android-release-unsigned.apk ./dist/radio-gaga-unsigned.apk",
     "test-stations": "node scripts/test-stations"
   },
   "repository": {
@@ -50,6 +53,7 @@
     "postcss-loader": "0.13.0",
     "rimraf": "2.5.4",
     "shelljs": "0.7.4",
+    "shx": "0.1.4",
     "style-loader": "0.13.1",
     "vue": "2.0.0-rc.6",
     "vue-i18n": "4.5.0",
