@@ -15,6 +15,7 @@ plugins
 www
 
 # app
+app-icons/output
 release-key.keystore
 .env
 dist

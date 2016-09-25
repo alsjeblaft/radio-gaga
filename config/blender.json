@@ -1,0 +1,15 @@
+{
+  "formats": [
+    {
+      "name": "android",
+      "sizes": [
+        { "constant": 36, "suffix": "_ldpi" },
+        { "constant": 48, "suffix": "_mdpi"},
+        { "constant": 72, "suffix": "_hdpi"},
+        { "constant": 96, "suffix": "_xhdpi"},
+        { "constant": 144, "suffix": "_xxhdpi"},
+        { "constant": 192, "suffix": "_xxxhdpi"}
+      ]
+    }
+  ]
+}
