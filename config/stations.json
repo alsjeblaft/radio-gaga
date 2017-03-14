@@ -82,8 +82,8 @@
   },
   {
     "name": "Lakihegy Rádió",
-    "url": "http://lanchidradio.hu/",
-    "locator": "http://lakihegyradio.hu/player/player.php->/;",
-    "src": "http://stream.composeit.hu:8300/;"
+    "url": "http://lakihegyradio.hu/",
+    "locator": "http://lakihegyradio.hu/player/player.php->stream.php",
+    "src": "http://lakihegyradio.hu/player/stream.php"
   }
 ]
